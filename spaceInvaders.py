@@ -1,10 +1,8 @@
 '''
-Ao abrir a aplicação (terminal), o usuário deve informar o seu nome e e-mail, o
-qual deve ser registrado em um arquivo de log do sistema (txt).
-
 # verificar menu
 # ajustar espaço frases
 # add arquivo e input nome/e-mail
+# criar ReadMe
 
 '''
 
@@ -12,6 +10,24 @@ import pygame
 from pygame import mixer
 #from pygame.locals import *
 import random
+
+def abrirArquivo():
+    abrir = open("logins.txt", "a")
+    abrir.close()
+
+def gravarArquivo():
+    arquivo = open("logins.txt","a")
+    linhasParaOArquivo = ["Nome: ", nome," - E-mail: ", email + "\n"]
+    for lnh in linhasParaOArquivo:
+        arquivo.write(lnh)
+    arquivo.close()
+
+nome = str(input('Digite seu nome:'))
+email = str(input('Digite seu e-mail:'))
+try:
+    gravarArquivo()
+except:
+    abrirArquivo()
 
 pygame.mixer.pre_init(44100, -16, 2, 512)
 mixer.init()
