@@ -1,6 +1,4 @@
 '''
-# verificar menu
-# ajustar espaço frases
 # criar ReadMe
 
 '''
@@ -21,11 +19,17 @@ def gravarArquivo():
     arquivo.close()
 
 nome = str(input('Digite seu nome:'))
-email = str(input('Digite seu e-mail:'))
-try:
-    gravarArquivo()
-except:
-    abrirArquivo()
+confEmail = False
+while confEmail == False:
+    email = str(input('Digite seu e-mail:'))
+    if '@' in email and '.' in email:
+        try:
+            gravarArquivo()
+            confEmail = True
+        except:
+            abrirArquivo()
+    else:
+        print("E-mail inválido")
 
 pygame.mixer.pre_init(44100, -16, 2, 512)
 mixer.init()
