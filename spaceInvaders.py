@@ -1,14 +1,12 @@
 '''
 # verificar menu
 # ajustar espaço frases
-# add arquivo e input nome/e-mail
 # criar ReadMe
 
 '''
 
 import pygame
 from pygame import mixer
-#from pygame.locals import *
 import random
 
 def abrirArquivo():
@@ -272,12 +270,12 @@ while run:
             alien_bullet_grupo.update()
         else:
             if game_over == -1:
-                draw_text('VOCÊ PERDEU!', font40, white, int(largura / 2 - 120), int(altura / 2 + 50))
+                draw_text('VOCÊ PERDEU!', font40, white, int(largura / 2 - 130), int(altura / 2 + 50))
             if game_over == 1:
-                draw_text('VOCÊ GANHOU!', font40, white, int(largura / 2 - 120), int(altura / 2 + 50))
+                draw_text('VOCÊ GANHOU!', font40, white, int(largura / 2 - 140), int(altura / 2 + 50))
 
     if contagem > 0:
-        draw_text('PREPARE-SE!', font40, white, int(largura / 2 - 100), int(altura / 2 + 50))
+        draw_text('PREPARE-SE!', font40, white, int(largura / 2 - 110), int(altura / 2 + 50))
         draw_text(str(contagem), font40, white, int(largura / 2 - 10), int(altura / 2 + 100))
         count_timer = pygame.time.get_ticks()
         if count_timer - ultima_contagem > 1000:
