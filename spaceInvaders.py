@@ -1,11 +1,11 @@
-'''
-# criar ReadMe
-
-'''
-
 import pygame
 from pygame import mixer
 import random
+
+mixer.init() 
+mixer.music.load("assets/fundo.wav") 
+mixer.music.set_volume(0.7) 
+mixer.music.play() 
 
 def abrirArquivo():
     abrir = open("logins.txt", "a")
@@ -18,10 +18,10 @@ def gravarArquivo():
         arquivo.write(lnh)
     arquivo.close()
 
-nome = str(input('Digite seu nome:'))
+nome = str(input('Digite seu nome: '))
 confEmail = False
 while confEmail == False:
-    email = str(input('Digite seu e-mail:'))
+    email = str(input('Digite seu e-mail: '))
     if '@' in email and '.' in email:
         try:
             gravarArquivo()
@@ -221,7 +221,6 @@ create_aliens()
 nave = Nave(int(largura / 2), altura - 100, 3)
 nave_grupo.add(nave)
 
-# aqui esta o MENU 
 def main_menu():
     while True:
         screen.blit(bg, (0, 0))
@@ -235,8 +234,6 @@ def main_menu():
                 quit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                # cria arquivo
-                # escreve no arquivo input do nome e do email
                 run = True
                 return run
             if event.key == pygame.K_ESCAPE:
@@ -246,7 +243,7 @@ def main_menu():
 
 main_menu()
 
-# aqui esta o JOGO
+
 run = True
 
 while run:
