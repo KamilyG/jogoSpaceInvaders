@@ -13,5 +13,6 @@
     Projeto desenvolvido por Kamily Grolli e Viccenzo Escarrone.
     
 4- CONTATOS:
-    Kamily: kamily369@live.com\n
-    Viccenzo: viccenzoescarrone@gmail.com
+   Kamily: kamily369@live.com
+    
+   Viccenzo: viccenzoescarrone@gmail.com
